@@ -41,6 +41,24 @@
 
 <div class="container">
   <div class="row">
+    <% data.flats.each do |owner, flat| %>
+    <div class="col-xs-12 col-sm-4">
+      <div class="card" style="background-image: url('<%= image_path flat.picture %>');">
+        <div class="card-category"><%= flat.city %></div>
+        <div class="card-description">
+          <h2><%= flat.name %></h2>
+          <p><%= flat.summary %></p>
+        </div>
+        <%= image_tag flat.owner_picture, class:"card-user avatar avatar-large" %>
+        <%= link_to "#", "flats/#{owner}.html", class: "card-link" %>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
+<!--
+<div class="container">
+  <div class="row">
     <div class="col-xs-12 text-center">
       <h2>Most popular destiantions:</h2>
     </div>
@@ -82,7 +100,7 @@
     </div>
   </div>
 </div>
-
+ -->
 <div class="text-center padded newsletter">
   <h2>Get in touch with us</h2>
   <p>Leave us your mail and get news from us</p>
